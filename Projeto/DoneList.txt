@@ -1,0 +1,8 @@
+COLOQUE AQUI TUDO QUE JÁ FOI TERMINADO E QUE NÃO POSSUE BUGS.
+
+Main:
+   - Struct carta; (Ainda não testado)
+
+Baralho:
+   - AddCarta; (Ainda não testado)
+   - CriaBaralho; (Ainda não testado)
