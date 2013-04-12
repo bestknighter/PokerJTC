@@ -1,7 +1,7 @@
 [Project]
 FileName=Project PTHE JTC.dev
 Name=Project PTHE JTC
-UnitCount=3
+UnitCount=7
 Type=1
 Ver=1
 ObjFiles=
@@ -76,4 +76,44 @@ OriginalFilename=
 ProductName=
 ProductVersion=
 AutoIncBuildNr=0
+
+[Unit4]
+FileName=jogadores.c
+CompileCpp=0
+Folder=Functions
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit5]
+FileName=analiseJogo.c
+CompileCpp=0
+Folder=Functions
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit6]
+FileName=jogadores.h
+CompileCpp=0
+Folder=Headers
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit7]
+FileName=analiseJogo.h
+CompileCpp=0
+Folder=Headers
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
 

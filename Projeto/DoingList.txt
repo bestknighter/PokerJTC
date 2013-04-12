@@ -1,8 +1,4 @@
 COLOQUE AQUI O QUE ESTÁ SENDO FEITO/DESENVOLVIDO OU JÁ TERMINOU MAS ESTÁ COM BUGS (SINALIZE COM "(BUG <descrição do bug>)" SEM ASPAS APÓS O PONTO E VÍRGULA)
 
-Main:
-   - Structs jogador, estatJogo; (Gabriel)
-
-
 AnaliseJogo:
-   - imprimeJogo (imprime estatísticas do jogo); (Gabriel)
+   - PrintJogadores (Imprime os jogadores); (BUGS: problema com ponteiro quanto aux->proximo e aux->nome)

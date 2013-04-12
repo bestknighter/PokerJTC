@@ -1,8 +1,13 @@
 COLOQUE AQUI TUDO QUE JÁ FOI TERMINADO E QUE NÃO POSSUE BUGS.
 
 Main:
+   - Struct estatJogo; (Ainda não testado)
    - Struct carta; (Ainda não testado)
+   - Struct jogador; (Ainda não testado)
 
 Baralho:
    - AddCarta; (Ainda não testado)
    - CriaBaralho; (Ainda não testado)
+
+AnaliseJogo:
+   - imprimeJogo; (Ainda não testado)
