@@ -5,6 +5,6 @@ struct jogador{
     int apostaAtual;
     int estado;
     int AI;
-    struct carta *mao;
+    struct carta **mao;
     struct jogador *proximo;
 };

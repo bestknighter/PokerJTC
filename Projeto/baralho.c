@@ -52,7 +52,7 @@ struct carta** criaBaralho(){
                 default:
                     x = j+49;
                     break;
-            }
+            };
             addCarta(binicio, x, (char)i+3);
-        }
+        };
 }

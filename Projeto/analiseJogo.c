@@ -10,7 +10,7 @@ struct estatJogo{
     int valorDaMesa;
     int rodadaAtual;
     struct jogador **jogadores;
-    struct carta *maoMesa;
+    struct carta **maoMesa;
 }Stats;
 
 void printJogadores(struct jogador **lj){
@@ -31,11 +31,12 @@ void printJogadores(struct jogador **lj){
 
 void imprimeJogo(){
     printf("\tRODADA:  %d\n", Stats.rodadaAtual);
-    printf(" - Jogadores na mesa:\td\n", Stats.nJogadoresTotal);
-    printf(" - Jogadores na partida:\t%d\n", Stats.nJogadoresAtivo);
+    printf(" - Jogadores na mesa:");
+    printJogadores(Stats.jogadores);
+    printf(" - Numero de Jogadores na mesa:\td\n", Stats.nJogadoresTotal);
+    printf(" - Numero de Jogadores na partida:\t%d\n", Stats.nJogadoresAtivo);
     printf(" - Small Blind:  %d\tBig Blind:   %d\n", Stats.smallBlind, Stats.bigBlind);
     printf(" - Valor da aposta:\t%d\n", Stats.apostaAtual);
     printf(" - Valor da mesa:\t%d\n", Stats.valorDaMesa);
-    printf(" - Jogadores na mesa:");
-    printJogadores(Stats.jogadores);
+
 }
