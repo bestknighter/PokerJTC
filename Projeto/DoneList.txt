@@ -11,3 +11,4 @@ Baralho:
 
 AnaliseJogo:
    - imprimeJogo; (Ainda não testado)
+   - PrintJogadores; (Ainda não testado)

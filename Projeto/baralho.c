@@ -1,15 +1,10 @@
 #include <stdlib.h>
-
-struct carta{
-    char valor;
-    char naipe;
-    struct carta *prox;
-};
+#include "baralho.h"
 
 /* Esta função recebe um ponteiro para o baralho, o valor da carta a ser
 *  adicionada e seu respectivo naipe e então os adiciona no baralho.
 */
-void addCarta(struct carta *binicio, char valor, char naipe){
+void addCarta(struct carta *binicio, tipo_valor valor, tipo_naipe naipe){
     struct carta *novo, *fp;
     
     novo = (struct carta*) malloc(sizeof(struct carta));

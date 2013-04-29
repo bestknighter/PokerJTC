@@ -1,17 +1,7 @@
 #include <stdlib.h>
+#include "analiseJogo.h"
 #include "jogadores.h"
 
-struct estatJogo{
-    int nJogadoresTotal;
-    int nJogadoresAtivo;
-    int smallBlind;
-    int bigBlind;
-    int apostaAtual;
-    int valorDaMesa;
-    int rodadaAtual;
-    struct jogador **jogadores;
-    struct carta **maoMesa;
-}Stats;
 
 void printJogadores(struct jogador **lj){
     struct jogador *aux;
