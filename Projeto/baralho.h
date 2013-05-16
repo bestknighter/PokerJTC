@@ -1,15 +1,15 @@
 enum naipe {
-    COPAS,
-    ESPADAS,
-    OURO,
-    PAUS
+    COPAS = 3,
+    OUROS,
+    PAUS,
+    ESPADAS
 };
 
 enum valor {
+    AS = 0,
     JOKER = 11,
     QUEEN,
-    KING,
-    AS
+    KING
 };
 
 typedef enum naipe tipo_naipe;
@@ -19,6 +19,7 @@ struct carta{
     tipo_valor valor;
     tipo_naipe naipe;
     struct carta *prox;
+    struct carta *ant;
 };
 
 /* Esta função recebe um ponteiro para o baralho, o valor da carta a ser

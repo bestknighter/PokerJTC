@@ -1,9 +1,6 @@
 COLOQUEM AQUI TUDO QUE AINDA PRECISA SER FEITO
 
 Baralho:
-   - removerCarta (deve receber o baralho, o valor e o naipe, procurar a carta no baralho e removê-la (com free), sem retorno);
-   - tirarCarta (deve receber o baralho, o valor e o naipe, procurar a carta no baralho e removê-la (sem free) e retornar um ponteiro apontando para essa carta);
    - embaralha (deve recebe o baralho e embaralhá-lo, sem retorno);
-   - destroiBaralho (deve receber o baralho e remover todas as cartas com free, sem retorno);
 
    P.S.: Não esqueçer que o baralho é uma FILA!

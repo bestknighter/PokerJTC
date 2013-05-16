@@ -10,10 +10,13 @@ void addCarta(struct carta *binicio, tipo_valor valor, tipo_naipe naipe){
     novo = (struct carta*) malloc(sizeof(struct carta));
     novo->valor = valor;
     novo->naipe = naipe;
+    novo->prox = NULL;
+    novo->ant = NULL;
     fp = binicio;
     if (fp != NULL){
         while (fp->prox != NULL) fp = fp->prox;
         fp->prox = novo;
+        novo->ant = fp;
     }else binicio = novo;
 }
 
@@ -23,31 +26,55 @@ void addCarta(struct carta *binicio, tipo_valor valor, tipo_naipe naipe){
 struct carta** criaBaralho(){
     struct carta *binicio;
     int i, j;
-    char x;
     
     binicio = NULL;
     for(i=0; i<4; i++)
         for (j=0; j<13; j++){
-            switch (j){
-                case 0:
-                    x = 'A';
-                    break;
-                case 9:
-                    x = 48;
-                    break;
-                case 10:
-                    x = 'J';
-                    break;
-                case 11:
-                    x = 'Q';
-                    break;
-                case 12:
-                    x = 'K';
-                    break;
-                default:
-                    x = j+49;
-                    break;
-            };
-            addCarta(binicio, x, (char)i+3);
+            addCarta(binicio, j, i+3);
         };
-}
+};
+
+void deletarCarta(struct carta **lc, tipo_naipe naipe, tipo_valor valor){
+    struct carta *c;
+    
+    c = *lc;
+    
+    if(c!= NULL){
+        while(c->prox!=NULL && c->naipe != naipe && c->valor != valor) c = c->prox;
+        if(c->naipe == naipe && c->valor == valor){
+            if (c->ant != NULL) c->ant->prox = c->prox;
+            else *lc = c->prox;
+            if (c->prox != NULL) c->prox->ant = c->ant;
+            free(c);
+            c = NULL;
+        };
+    };
+};
+
+struct carta* tirarCarta(struct carta **lc, tipo_naipe naipe, tipo_valor valor){
+    struct carta *c;
+    
+    c = *lc;
+    
+    if(c!= NULL){
+        while(c->prox!=NULL && c->naipe != naipe && c->valor != valor) c = c->prox;
+        if(c->naipe == naipe && c->valor == valor){
+            if (c->ant != NULL) c->ant->prox = c->prox;
+            else *lc = c->prox;
+            if (c->prox != NULL) c->prox->ant = c->ant;
+            return c;
+        };
+    };
+};
+
+void destroiBaralho(struct carta **lc){
+    struct carta *c, *aux;
+    
+    c = *lc;
+    
+    while(c!=NULL){
+        aux = c;
+        c = c->prox;
+        free(aux);
+    };
+};
