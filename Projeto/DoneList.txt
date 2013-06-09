@@ -2,16 +2,23 @@ COLOQUE AQUI TUDO QUE JÁ FOI TERMINADO E QUE NÃO POSSUE BUGS.
 
 Main:
    - Struct estatJogo; (Ainda não testado)
-   - Struct carta; (Ainda não testado)
+   - Struct carta;
    - Struct jogador; (Ainda não testado)
 
 Baralho:
-   - AddCarta; (Ainda não testado)
-   - CriaBaralho; (Ainda não testado)
-   - deletarCarta (deve receber o baralho, o valor e o naipe, procurar a carta no baralho e removê-la (com free), sem retorno);
-   - tirarCarta (deve receber o baralho, o valor e o naipe, procurar a carta no baralho e removê-la (sem free) e retornar um ponteiro apontando para essa carta);
-   - destroiBaralho (deve receber o baralho e remover todas as cartas com free, sem retorno);
+   - AddCarta;
+   - CriaBaralho;
+   - deletarCarta;
+   - tirarCarta;
+   - destroiBaralho;
+   - tamanho;
+   - emb;
+   - embaralha;
 
 AnaliseJogo:
    - imprimeJogo; (Ainda não testado)
-   - PrintJogadores; (Ainda não testado)
+   - imprimeJogadores; (Ainda não testado)
+   - imprimeCarta;
+   - imprimeBaralho;
+
+Jogadores:

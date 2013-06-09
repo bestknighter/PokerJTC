@@ -1,6 +1,3 @@
 COLOQUEM AQUI TUDO QUE AINDA PRECISA SER FEITO
 
-Baralho:
-   - embaralha (deve recebe o baralho e embaralhá-lo, sem retorno);
-
-   P.S.: Não esqueçer que o baralho é uma FILA!
+Não faço ideia... Só estou fazendo...

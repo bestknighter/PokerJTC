@@ -26,14 +26,14 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o "Project PTHE JTC.exe" $(LIBS)
 
-main.o: main.c C:/Dev-Cpp/include/stdio.h C:/Dev-Cpp/include/_mingw.h   C:/Dev-Cpp/include/stddef.h C:/Dev-Cpp/include/stdarg.h   C:/Dev-Cpp/include/sys/types.h C:/Dev-Cpp/include/stdlib.h
+main.o: main.c analiseJogo.h jogadores.h baralho.h
 	$(CC) -c main.c -o main.o $(CFLAGS)
 
-baralho.o: baralho.c C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h baralho.h
+baralho.o: baralho.c C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/time.h baralho.h
 	$(CC) -c baralho.c -o baralho.o $(CFLAGS)
 
 jogadores.o: jogadores.c jogadores.h
 	$(CC) -c jogadores.c -o jogadores.o $(CFLAGS)
 
-analiseJogo.o: analiseJogo.c C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h analiseJogo.h   jogadores.h
+analiseJogo.o: analiseJogo.c C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/stdio.h C:/Dev-Cpp/include/stdarg.h   C:/Dev-Cpp/include/sys/types.h analiseJogo.h jogadores.h baralho.h
 	$(CC) -c analiseJogo.c -o analiseJogo.o $(CFLAGS)
