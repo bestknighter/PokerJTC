@@ -31,4 +31,16 @@ void imprimeJogador(Player *player, int censurado);
 
 void imprimeMesa(Stats *stats, int view);
 
+int menuHumanos(Stats *stats, Player *plaux);
+
+void endScreen(Stats *stats);
+
+int menuPrincipal();
+
+int menuNovoJogo(Stats *stats);
+
+void menuNovoJogador(Stats *stats);
+
+void novaRodada(Stats *stats);
+
 #endif

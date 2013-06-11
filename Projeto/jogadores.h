@@ -2,10 +2,12 @@
 #define _JOGADORES
 
 enum estados {
-    FOLDED = -1,
-    PLAYED = 0,
-    NOTPLAYED,
-    CHECKED
+    NOTPLAYED = -1,
+    FOLDED = 0,
+    CALLED,
+    RAISED,
+    CHECKED,
+    WINNER
 };
 
 enum intel {
@@ -38,7 +40,7 @@ void fold(Player *pl);
 
 void call(Player *pl, int valorDaApostaAtual);
 
-int raise(Player *pl);
+int raise(Player *pl, int inicial);
 
 void check(Player *pl);
 

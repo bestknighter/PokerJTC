@@ -1,18 +1,8 @@
-#include "printer.h"
+#include "gameLogic.h"
 
 int main(int argc, char *argv[]){
-    Stats *stats;
     
-    /*stats = initGame();
-    imprimeJogo(stats);
-    printf("\n\n");
-    addJogador(stats, PADRAO);
-    printf("\n");
-    addJogador(stats, PADRAO);
-    system("CLS");
-    imprimeJogo(stats);*/
     
-    printf("\n\n");
-    system("PAUSE");
+    mainLoop();
     return 0;
 }

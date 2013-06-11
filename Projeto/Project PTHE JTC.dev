@@ -1,7 +1,7 @@
 [Project]
 FileName=Project PTHE JTC.dev
 Name=Project PTHE JTC
-UnitCount=11
+UnitCount=13
 Type=1
 Ver=1
 ObjFiles=
@@ -149,6 +149,26 @@ BuildCmd=
 
 [Unit11]
 FileName=userInput.h
+CompileCpp=0
+Folder=Headers
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit12]
+FileName=gameLogic.c
+CompileCpp=0
+Folder=Functions
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit13]
+FileName=gameLogic.h
 CompileCpp=0
 Folder=Headers
 Compile=1

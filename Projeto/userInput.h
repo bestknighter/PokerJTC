@@ -11,4 +11,8 @@ int getAI();
 
 int getRaise();
 
+int getBBlind();
+
+int getSBlind();
+
 #endif

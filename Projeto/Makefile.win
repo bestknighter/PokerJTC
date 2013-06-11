@@ -5,8 +5,8 @@ CPP  = g++.exe
 CC   = gcc.exe
 WINDRES = windres.exe
 RES  = 
-OBJ  = main.o baralho.o jogadores.o printer.o core.o userInput.o $(RES)
-LINKOBJ  = main.o baralho.o jogadores.o printer.o core.o userInput.o $(RES)
+OBJ  = main.o baralho.o jogadores.o printer.o core.o userInput.o gameLogic.o $(RES)
+LINKOBJ  = main.o baralho.o jogadores.o printer.o core.o userInput.o gameLogic.o $(RES)
 LIBS =  -L"C:/Dev-Cpp/lib"  
 INCS =  -I"C:/Dev-Cpp/include" 
 CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
@@ -26,7 +26,7 @@ clean: clean-custom
 $(BIN): $(OBJ)
 	$(CC) $(LINKOBJ) -o "Project PTHE JTC.exe" $(LIBS)
 
-main.o: main.c printer.h C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/stdio.h C:/Dev-Cpp/include/stdarg.h   C:/Dev-Cpp/include/sys/types.h core.h userInput.h   C:/Dev-Cpp/include/string.h jogadores.h baralho.h   C:/Dev-Cpp/include/time.h
+main.o: main.c gameLogic.h printer.h C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/stdio.h C:/Dev-Cpp/include/stdarg.h   C:/Dev-Cpp/include/sys/types.h core.h userInput.h   C:/Dev-Cpp/include/string.h jogadores.h baralho.h   C:/Dev-Cpp/include/time.h
 	$(CC) -c main.c -o main.o $(CFLAGS)
 
 baralho.o: baralho.c baralho.h C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/time.h
@@ -43,3 +43,6 @@ core.o: core.c core.h userInput.h C:/Dev-Cpp/include/stdio.h   C:/Dev-Cpp/includ
 
 userInput.o: userInput.c userInput.h C:/Dev-Cpp/include/stdio.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/stdarg.h C:/Dev-Cpp/include/sys/types.h   C:/Dev-Cpp/include/string.h
 	$(CC) -c userInput.c -o userInput.o $(CFLAGS)
+
+gameLogic.o: gameLogic.c gameLogic.h printer.h   C:/Dev-Cpp/include/stdlib.h C:/Dev-Cpp/include/_mingw.h   C:/Dev-Cpp/include/stddef.h C:/Dev-Cpp/include/stdio.h   C:/Dev-Cpp/include/stdarg.h C:/Dev-Cpp/include/sys/types.h core.h   userInput.h C:/Dev-Cpp/include/string.h jogadores.h baralho.h   C:/Dev-Cpp/include/time.h
+	$(CC) -c gameLogic.c -o gameLogic.o $(CFLAGS)

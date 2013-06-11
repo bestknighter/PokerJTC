@@ -23,7 +23,7 @@ Carta** criaBaralho(){
     
     binicio = calloc(1, sizeof(Carta**));
     for(i=0; i<4; i++)
-        for (j=0; j<14; j++){
+        for (j=2; j<15; j++){
             addCarta(binicio, j, i+3);
         };
     return binicio;
@@ -37,9 +37,7 @@ void deletarCarta(Carta **lc, tipo_naipe naipe, tipo_valor valor){
 };
 
 Carta* topCarta(Carta **lc){
-    Carta *c;
-    
-    return tirarCarta(lc, c->naipe, c->valor);
+    return tirarCarta(lc, (*(lc))->naipe, (*(lc))->valor);
 };
 
 Carta* tirarCarta(Carta **lc, tipo_naipe naipe, tipo_valor valor){

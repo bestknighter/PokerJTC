@@ -11,10 +11,10 @@ enum naipe {
 };
 
 enum valor {
-    AS = 0,
-    KING = 11,
+    JOKER = 11,
     QUEEN,
-    JOKER
+    KING,
+    AS
 };
 
 typedef enum naipe tipo_naipe;

@@ -6,22 +6,22 @@ void fold(Player *pl){
 
 void call(Player *pl, int valorDaApostaAtual){
     if(pl->dinheiro >= pl->dinheiro + pl->apostaAtual - valorDaApostaAtual){
+        pl->estado = CALLED;
         pl->dinheiro += pl->apostaAtual;
         pl->apostaAtual = valorDaApostaAtual;
         pl->dinheiro -= pl->apostaAtual;
-        pl->estado = PLAYED;
     }else{
         //TODO: Erro! Dinheiro não suficiente...
     };
 };
 
-int raise(Player *pl){
+int raise(Player *pl, int inicial){  //TODO: Raise invalido (menor que a Big Blind)
     int i;
     i = getRaise();
-    (i>0)?:((i==0)?(/*Error(RAISE_INVALIDO),*/ system("PAUSE"), exit(1)):(i=-1*i));
-    pl->apostaAtual += i;
+    (i>=0)?(i=i):(i=-1*i);
+    pl->apostaAtual = inicial+i;
     pl->dinheiro -= i;
-    pl->estado = PLAYED;
+    pl->estado = RAISED;
     return i;
 };
 

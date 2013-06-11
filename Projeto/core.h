@@ -19,6 +19,7 @@ typedef struct estatJogo{
     int rodadaAtual;
     struct jogador **jogadores;
     struct carta **maoMesa;
+    struct carta **baralhoJogo;
 }Stats;
 
 Stats* initGame();
@@ -27,16 +28,24 @@ void resetGame(Stats *stats);
 
 void restartJogador(Player *player);
 
-void resetJogador(Player *player);
-
 void restartJogadores(Player **lp);
-
-void resetJogadores(Player **lp);
 
 Player* criarJogador(int mode);
 
 void insereJogadorLista(Stats *stats, Player *jogador);
 
 void addJogador(Stats *stats, int mode);
+
+void resetJogadores(Stats *stats);
+
+void calculoPote(Stats *stats);
+
+int fimRodada(Stats *stats);
+
+void badgeSetter(Stats *stats);
+
+void setBlind(Stats *stats);
+
+Player* getVencedor(Stats *stats);
 
 #endif
