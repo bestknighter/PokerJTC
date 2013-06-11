@@ -1,3 +1,8 @@
+#ifndef _BARALHO
+#define _BARALHO
+#include <stdlib.h>
+#include <time.h>
+
 enum naipe {
     COPAS = 3,
     OUROS,
@@ -23,22 +28,28 @@ typedef struct carta{
 }Carta;
 
 
-/* Esta função recebe um ponteiro para o baralho, o valor da carta a ser
-*  adicionada e seu respectivo naipe e então os adiciona no baralho
+/*  Esta função recebe um ponteiro para o baralho, o valor da carta a ser
+*   adicionada e seu respectivo naipe e então os adiciona no baralho
 */
 void addCarta(Carta **, tipo_valor, tipo_naipe);
 
 
-/* Esta função retorna um ponteiro para lista de Carta (baralho). A função
-*  criará uma fila organizada com todas as 52 cartas normais de um baralho
+/*  Esta função retorna um ponteiro para lista de Carta (baralho). A função
+*   criará uma fila organizada com todas as 52 cartas normais de um baralho
 */
 Carta** criaBaralho();
 
 
-/* Esta função recebe um ponteiro para lista de Carta (baralho), um naipe
-*  e um valor, procura a carta no baralho e, se a encontrar, a deleta
+/*  Esta função recebe um ponteiro para lista de Carta (baralho), um naipe
+*   e um valor, procura a carta no baralho e, se a encontrar, a deleta
 */
 void deletarCarta(Carta **lc, tipo_naipe naipe, tipo_valor valor);
+
+
+/*  Esta função recebe um ponteiro para lista de
+*   Carta(baralho), remove a primeira carta e a retorna
+*/
+Carta* topCarta(Carta **lc);
 
 
 /* Esta função recebe um ponteiro para lista de Carta (baralho), um naipe e um 
@@ -73,3 +84,5 @@ void emb(Carta **lc);
 *   MELHOR EMBARALHADA
 */
 void embaralha(Carta **lc);
+
+#endif

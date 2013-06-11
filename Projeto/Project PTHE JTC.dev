@@ -1,7 +1,7 @@
 [Project]
 FileName=Project PTHE JTC.dev
 Name=Project PTHE JTC
-UnitCount=7
+UnitCount=11
 Type=1
 Ver=1
 ObjFiles=
@@ -88,7 +88,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=analiseJogo.c
+FileName=printer.c
 CompileCpp=0
 Folder=Functions
 Compile=1
@@ -108,7 +108,47 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit7]
-FileName=analiseJogo.h
+FileName=printer.h
+CompileCpp=0
+Folder=Headers
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit8]
+FileName=core.c
+CompileCpp=0
+Folder=Functions
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit9]
+FileName=core.h
+CompileCpp=0
+Folder=Headers
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit10]
+FileName=userInput.c
+CompileCpp=0
+Folder=Functions
+Compile=1
+Link=1
+Priority=1000
+OverrideBuildCmd=0
+BuildCmd=
+
+[Unit11]
+FileName=userInput.h
 CompileCpp=0
 Folder=Headers
 Compile=1

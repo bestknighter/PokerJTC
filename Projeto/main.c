@@ -1,17 +1,17 @@
-#include "analiseJogo.h"
+#include "printer.h"
 
 int main(int argc, char *argv[]){
-    Carta **teste, *aux;
+    Stats *stats;
     
-    printf("Testado baralho.c:\n\nCriando baralho:\n");
-    teste = criaBaralho();
-    imprimeBaralho(teste);
-    printf("\n\nEmbaralha:\n");
-    embaralha(teste);
-    imprimeBaralho(teste);
-    printf("\n\nDestruindo:\n");
-    destroiBaralho(teste);
-    imprimeBaralho(teste);
+    /*stats = initGame();
+    imprimeJogo(stats);
+    printf("\n\n");
+    addJogador(stats, PADRAO);
+    printf("\n");
+    addJogador(stats, PADRAO);
+    system("CLS");
+    imprimeJogo(stats);*/
+    
     printf("\n\n");
     system("PAUSE");
     return 0;

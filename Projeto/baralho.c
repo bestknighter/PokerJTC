@@ -1,10 +1,5 @@
-#include <stdlib.h>
-#include <time.h>
 #include "baralho.h"
 
-/* Esta função recebe um ponteiro para o baralho, o valor da carta a ser
-*  adicionada e seu respectivo naipe e então os adiciona no baralho.
-*/
 void addCarta(Carta **binicio, tipo_valor valor, tipo_naipe naipe){
     Carta *novo, *fp;
     
@@ -22,9 +17,6 @@ void addCarta(Carta **binicio, tipo_valor valor, tipo_naipe naipe){
     }else *binicio = novo;
 };
 
-/* Esta função retorna um endereço de um ponteiro para Carta. A função
-*  criará uma fila organizada com todas as 52 cartas normais de um baralho.
-*/
 Carta** criaBaralho(){
     Carta **binicio;
     int i, j;
@@ -42,6 +34,12 @@ void deletarCarta(Carta **lc, tipo_naipe naipe, tipo_valor valor){
     
     c = tirarCarta(lc, naipe, valor);
     free(c);
+};
+
+Carta* topCarta(Carta **lc){
+    Carta *c;
+    
+    return tirarCarta(lc, c->naipe, c->valor);
 };
 
 Carta* tirarCarta(Carta **lc, tipo_naipe naipe, tipo_valor valor){

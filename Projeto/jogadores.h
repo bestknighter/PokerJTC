@@ -1,34 +1,45 @@
+#ifndef _JOGADORES
+#define _JOGADORES
+
+enum estados {
+    FOLDED = -1,
+    PLAYED = 0,
+    NOTPLAYED,
+    CHECKED
+};
+
+enum intel {
+    HUMAN = -1,
+    AI0 = 0,
+    AI1
+};
+
+enum badges {
+    DEALER = 0,
+    SBLIND,
+    BBLIND,
+    OTHER
+};
+
 typedef struct jogador{
-    char nome[20];
+    char *nome;
     int nJogador;
     int dinheiro;
     int apostaAtual;
     int estado;
     int AI;
+    int badge;
     struct carta **mao;
     struct jogador *proximo;
+    struct jogador *ant;
 }Player;
 
+void fold(Player *pl);
 
-/*  FUNÇÃO AINDA NÃO IMPLEMENTADA
-*   realiza as operações necessárias quando algum jogador dá fold
-*/
-void fold(void);
+void call(Player *pl, int valorDaApostaAtual);
 
+int raise(Player *pl);
 
-/*  FUNÇÃO AINDA NÃO IMPLEMENTADA
-*   realiza as operações necessárias quando algum jogador dá call
-*/
-void call(void);
+void check(Player *pl);
 
-
-/*  FUNÇÃO AINDA NÃO IMPLEMENTADA
-*   realiza as operações necessárias quando algum jogador dá raise
-*/
-void raise(void);
-
-
-/*  FUNÇÃO AINDA NÃO IMPLEMENTADA
-*   realiza as operações necessárias quando algum jogador dá check
-*/
-void check(void);
+#endif
