@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1370926868 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\baralho.c
+	"baralho.h"
+
+1370926870 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\baralho.h
+	<stdlib.h>
+	<time.h>
+
+1370940040 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\core.c
+	"core.h"
+
+1370938350 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\core.h
+	"userInput.h"
+	"jogadores.h"
+	"baralho.h"
+
+1370930400 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\userinput.h
+	<stdio.h>
+	<string.h>
+
+1370938614 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\jogadores.h
+
+1370966910 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\gamelogic.c
+	"gameLogic.h"
+
+1370932954 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\gamelogic.h
+	"printer.h"
+
+1370939742 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\printer.h
+	<stdlib.h>
+	<stdio.h>
+	"core.h"
+	"jogadores.h"
+	"baralho.h"
+
+1370938614 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\jogadores.c
+	"jogadores.h"
+
+1370966462 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\main.c
+	"gameLogic.h"
+
+1370939866 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\printer.c
+	"printer.h"
+
+1370937754 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\userinput.c
+	"userInput.h"
+

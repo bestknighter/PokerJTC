@@ -7,8 +7,7 @@ void rodadaLoop(Stats *stats){
     plaux = *(stats->jogadores);
     srand(time(NULL));
     srand(rand());
-    while(!fimRodada(stats)){
-        if(stats->nJogadoresAtivo<=1) break;
+    while((!fimRodada(stats)) || (stats->nJogadoresAtivo>1)){
         if(plaux->estado==NOTPLAYED || plaux->estado==CHECKED){
             if(plaux->AI == HUMAN){
                 esc = menuHumanos(stats, plaux);
