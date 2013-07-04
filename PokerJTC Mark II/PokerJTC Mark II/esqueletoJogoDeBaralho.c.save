@@ -1,0 +1,17 @@
+#ifndef _SKELLETON_C
+#define _SKELLETON_C
+#include "esqueletoJogoDeBaralho.h"
+
+void resetJogador(PlayerBasic *player){
+      destroiBaralho(player->mao);
+};
+
+void darCarta(PlayerBasic *player, Carta *c){
+      addCarta(player->mao, c);
+};
+
+Carta* tiraCarta(PlayerBasic *player){
+      tirarCarta(player->mao,)
+};
+
+#endif

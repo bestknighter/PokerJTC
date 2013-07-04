@@ -1,0 +1,19 @@
+#ifndef _JOGADOR_H
+#define _JOGADOR_H
+
+typedef struct jogador{
+    void *outrosDados;
+    struct carta **mao;
+    struct jogador *prox;
+    struct jogador *ant;
+}PlayerBasic;
+
+PlayerBasic* criarJogador();
+
+void insereJogador(PlayerBasic **lp, PlayerBasic *player);
+
+void removerJogador(PlayerBasic **lp, PlayerBasic *player);
+
+void apagaJogadores(PlayerBasic **lp);
+
+#endif

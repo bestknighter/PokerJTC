@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="PokerJTC Mark II" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="Framework\;Framework\Sources\;Framework\Headers\;PokerGame\;PokerGame\Source\;PokerGame\Headers\;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/PokerJTC Mark II" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/PokerJTC Mark II" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="FrameWork_JogoDeBaralho.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Framework/Sources/" />
+		</Unit>
+		<Unit filename="FrameWork_JogoDeBaralho.h">
+			<Option virtualFolder="Framework/Headers/" />
+		</Unit>
+		<Unit filename="GUI.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="PokerGame/Source/" />
+		</Unit>
+		<Unit filename="GUI.h">
+			<Option virtualFolder="PokerGame/Headers/" />
+		</Unit>
+		<Unit filename="GameLogic.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="PokerGame/Source/" />
+		</Unit>
+		<Unit filename="GameLogic.h">
+			<Option virtualFolder="PokerGame/Headers/" />
+		</Unit>
+		<Unit filename="GameManagement.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="PokerGame/Source/" />
+		</Unit>
+		<Unit filename="GameManagement.h">
+			<Option virtualFolder="PokerGame/Headers/" />
+		</Unit>
+		<Unit filename="baralho.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Framework/Sources/" />
+		</Unit>
+		<Unit filename="baralho.h">
+			<Option virtualFolder="Framework/Headers/" />
+		</Unit>
+		<Unit filename="input.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="PokerGame/Source/" />
+		</Unit>
+		<Unit filename="input.h">
+			<Option virtualFolder="PokerGame/Headers/" />
+		</Unit>
+		<Unit filename="jogador.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Framework/Sources/" />
+		</Unit>
+		<Unit filename="jogador.h">
+			<Option virtualFolder="Framework/Headers/" />
+		</Unit>
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="Framework/" />
+		</Unit>
+		<Unit filename="output.c">
+			<Option compilerVar="CC" />
+			<Option virtualFolder="PokerGame/Source/" />
+		</Unit>
+		<Unit filename="output.h">
+			<Option virtualFolder="PokerGame/Headers/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1371178538 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\baralho.c
+	"baralho.h"
+
+1371140599 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\baralho.h
+	<stdlib.h>
+	<time.h>
+
+1371156031 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\esqueletojogodebaralho.c
+	"esqueletoJogoDeBaralho.h"
+
+1371155913 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\esqueletojogodebaralho.h
+	"jogador.h"
+	"baralho.h"
+
+1371156249 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\jogador.h
+	<stdlib.h>
+
+1371177629 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\jogador.c
+	"jogador.h"
+
+1353747460 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1371178243 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\pokergamemanagement.c
+	"pokerGameManagement.h"
+
+1371178234 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\pokergamemanagement.h
+	"esqueletoJogoDeBaralho.h"
+	"userInput.h"
+
+1371156354 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\userinput.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1371155466 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\userinput.c
+	"userInput.h"
+
+1372174785 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\framework_jogodebaralho.c
+	"FrameWork_JogoDeBaralho.h"
+
+1372707049 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\framework_jogodebaralho.h
+	"jogador.h"
+	"baralho.h"
+
+1372707494 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamelogic.c
+	"GameLogic.h"
+
+1372707576 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamelogic.h
+	"GameManagement.h"
+
+1372707575 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamemanagement.h
+

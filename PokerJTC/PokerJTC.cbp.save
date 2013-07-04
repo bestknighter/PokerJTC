@@ -54,7 +54,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="printer.h" />
-		<Unit filename="resource.h" />
 		<Unit filename="userInput.c">
 			<Option compilerVar="CC" />
 		</Unit>

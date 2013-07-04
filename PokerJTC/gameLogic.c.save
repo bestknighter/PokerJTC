@@ -3,7 +3,7 @@
 void rodadaLoop(Stats *stats){
     Player *plaux;
     int esc;
-
+    
     plaux = *(stats->jogadores);
     srand(time(NULL));
     srand(rand());
@@ -14,7 +14,7 @@ void rodadaLoop(Stats *stats){
             }else if(plaux->AI == AI0){
                 esc = rand()%4;
             }else{
-                //TODO AI1
+                //TODO: AI1
             };
             switch(esc){
                 case 0:
@@ -28,11 +28,11 @@ void rodadaLoop(Stats *stats){
                     resetJogadores(stats);
                     stats->apostaAtual += raise(plaux, stats->apostaAtual);
                     break;
-                case 3:     //TODO Não permitido na primeira rodada!
+                case 3:     //TODO: Não permitido na primeira rodada!
                     check(plaux);
                     break;
                 default:
-                    //TODO opcao inexistente!
+                    //TODO: opcao inexistente!
                     break;
             };
         };
@@ -88,9 +88,9 @@ void seletorRodada(Stats *stats){
 void prepR0(Stats *stats){
     Player *plaux;
     Carta *c;
-
+    
     plaux = *(stats->jogadores);
-
+    
     badgeSetter(stats);
     setBlind(stats);
     plaux = *(stats->jogadores);
@@ -109,7 +109,7 @@ void prepR0(Stats *stats){
 void prepR1(Stats *stats){
     Carta *c;
     int x;
-
+    
     c = topCarta(stats->baralhoJogo);
     free(c);
     for(x=0; x<3; x++){
@@ -120,7 +120,7 @@ void prepR1(Stats *stats){
 
 void prepR2(Stats *stats){
     Carta *c;
-
+    
     c = topCarta(stats->baralhoJogo);
     free(c);
     c = topCarta(stats->baralhoJogo);
@@ -133,10 +133,42 @@ void showdown(Stats *stats){
 
 void mostrarTelaFinal(Stats *stats){
     Player *plaux;
-
+    
     plaux = *(stats->jogadores);
-
+    
     while(plaux->estado > FOLDED) plaux = plaux->proximo;
     plaux->estado = WINNER;
     endScreen(stats);
+};
+
+void mainLoop(){
+    int esc = 1;
+    Stats* stats;
+    stats = initGame();
+    do{
+        system("CLS");
+        switch(esc){
+            case 0:
+                break;
+            case 1:
+                esc = menuPrincipal();
+                break;
+            case 11:
+                restartGame(stats);
+                esc = menuNovoJogo(stats);
+                break;
+            case 111:
+                menuNovoJogador(stats);
+                esc /= 10;
+                break;
+            case 112:
+                seletorRodada(stats);
+                esc = novaPartida();
+                break;
+            case 10:
+            case 110:
+                esc = 0;
+                break;
+        };
+    }while(esc!=0);
 };

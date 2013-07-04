@@ -1,0 +1,14 @@
+#ifndef _SKELETON_H
+#define _SKELETON_H
+#include "jogadores.h"
+#include "baralho.h"
+
+void resetJogador(PlayerBasic *player);
+
+void resetJogadores(PlayerBasics **lp);
+
+void darCarta(PlayerBasic *player, Carta *c);
+
+Carta* tirarCarta(PlayerBasic *player);
+
+#endif

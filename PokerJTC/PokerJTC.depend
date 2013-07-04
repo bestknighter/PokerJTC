@@ -20,10 +20,10 @@
 
 1370938614 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\jogadores.h
 
-1370966910 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\gamelogic.c
+1371069340 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\gamelogic.c
 	"gameLogic.h"
 
-1370932954 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\gamelogic.h
+1371069342 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\gamelogic.h
 	"printer.h"
 
 1370939742 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\printer.h
@@ -36,7 +36,7 @@
 1370938614 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\jogadores.c
 	"jogadores.h"
 
-1370966462 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\main.c
+1371069339 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\main.c
 	"gameLogic.h"
 
 1370939866 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc\printer.c
