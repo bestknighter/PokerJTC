@@ -15,6 +15,7 @@ void mainloop(){
                         esc = menuPrincipal();
                         break;
                   case 11:
+                        resetGame(stats);
                         esc = menuNovoJogo(stats);
                         break;
                   case 111:
@@ -24,7 +25,6 @@ void mainloop(){
                   case 112:
                         seletorRodada(stats);
                         esc = novaPartida();
-                        if (esc == 11) resetGame(stats);
                         break;
                   case 10:
                   case 110:
@@ -47,7 +47,7 @@ void rodadaLoop(Stats *stats){
         if(dados->estado==NOTPLAYED || dados->estado==CHECKED){
             if(dados->AI == HUMAN){
                 esc = menuHumanos(stats, plaux);
-            }else if(dados->AI == AI0){
+            }else if(plaux->AI == AI0){
                 esc = rand()%4;
             }else{
                 //TODO AI1
@@ -73,7 +73,7 @@ void rodadaLoop(Stats *stats){
             };
         };
         calculoPote(stats);
-        plaux = plaux->prox;
+        plaux = plaux->proximo;
     };
     resetJogadores(stats);
 };
@@ -122,7 +122,7 @@ void seletorRodada(Stats *stats){
 };
 
 void prepR0(Stats *stats){
-    PlayerBasic*plaux;
+    Player *plaux;
     Carta *c;
 
     plaux = *(stats->jogadores);
@@ -132,14 +132,14 @@ void prepR0(Stats *stats){
     plaux = *(stats->jogadores);
     do{
         c = topCarta(stats->baralhoJogo);
-        addCarta(plaux->mao, criaCarta(c->valor, c->naipe));
-        plaux = plaux->prox;
-    }while(plaux->prox != (*(stats->jogadores))->prox);
+        addCarta(plaux->mao, c->valor, c->naipe);
+        plaux = plaux->proximo;
+    }while(plaux->proximo != (*(stats->jogadores))->proximo);
     do{
         c = topCarta(stats->baralhoJogo);
-        addCarta(plaux->mao, criaCarta(c->valor, c->naipe));
-        plaux = plaux->prox;
-    }while(plaux->prox != (*(stats->jogadores))->prox);
+        addCarta(plaux->mao, c->valor, c->naipe);
+        plaux = plaux->proximo;
+    }while(plaux->proximo != (*(stats->jogadores))->proximo);
 };
 
 void prepR1(Stats *stats){
@@ -150,7 +150,7 @@ void prepR1(Stats *stats){
     free(c);
     for(x=0; x<3; x++){
         c = topCarta(stats->baralhoJogo);
-        addCarta(stats->maoMesa, criaCarta(c->valor, c->naipe));
+        addCarta(stats->maoMesa, c->valor, c->naipe);
     };
 };
 
@@ -160,7 +160,7 @@ void prepR2(Stats *stats){
     c = topCarta(stats->baralhoJogo);
     free(c);
     c = topCarta(stats->baralhoJogo);
-    addCarta(stats->maoMesa, criaCarta(c->valor, c->naipe));
+    addCarta(stats->maoMesa, c->valor, c->naipe);
 };
 
 void showdown(Stats *stats){
@@ -168,17 +168,12 @@ void showdown(Stats *stats){
 };
 
 void mostrarTelaFinal(Stats *stats){
-    PlayerBasic *plaux;
-    Dados *dados;
+    Player *plaux;
 
     plaux = *(stats->jogadores);
-    dados = plaux->outrosDados;
 
-    while(dados->estado > FOLDED){
-            plaux = plaux->prox;
-            dados = plaux->outrosDados;
-    };
-    dados->estado = WINNER;
+    while(plaux->estado > FOLDED) plaux = plaux->proximo;
+    plaux->estado = WINNER;
     endScreen(stats);
 };
 

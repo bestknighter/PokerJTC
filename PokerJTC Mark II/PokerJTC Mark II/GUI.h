@@ -2,18 +2,20 @@
 #define _GUI_H
 #include "input.h"
 #include "output.h"
+#include "GameManagement.h"
+#include "FrameWork_JogoDeBaralho.h"
 
 char* getNome();
 
-int getDinheiro();
+float getDinheiro();
 
 int getAI();
 
-int getRaise();
+float getRaise();
 
-int getBBlind();
+float getBBlind();
 
-int getSBlind();
+float getSBlind();
 
 void imprimeJogadores(PlayerBasic **lj);
 
@@ -27,7 +29,7 @@ void imprimeJogador(PlayerBasic *player, int censurado);
 
 void imprimeMesa(Stats *stats, int view);
 
-int menuHumanos(Stats *stats, Player *plaux);
+int menuHumanos(Stats *stats, PlayerBasic *plaux);
 
 void endScreen(Stats *stats);
 
@@ -36,6 +38,8 @@ int menuPrincipal();
 int menuNovoJogo(Stats *stats);
 
 void menuNovoJogador(Stats *stats);
+
+int novaPartida();
 
 void novaRodada(Stats *stats);
 

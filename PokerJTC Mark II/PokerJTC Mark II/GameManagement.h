@@ -1,5 +1,6 @@
 #ifndef _POKERGAME_H
 #define _POKERGAME_H
+#include "FrameWork_JogoDeBaralho.h"
 
 enum mode {
     PADRAO = 0,
@@ -67,12 +68,30 @@ Stats* initGame();
 
 void resetGame(Stats *stats);
 
-void badgeSetter(Stats *stats);
+void restartJogador(PlayerBasic *player);
+
+void restartJogadores(PlayerBasic **lp);
+
+PlayerBasic* criarJogador(int mode);
+
+void insereJogadorLista(Stats *stats, PlayerBasic *jogador);
+
+void addJogador(Stats *stats, int mode);
+
+void resetEstado(Stats *stats);
 
 void calculoPote(Stats *stats);
 
-void setVencedor(Stats *stats);
+int fimRodada(Stats *stats);
+
+void badgeSetter(Stats *stats);
+
+void setBlind(Stats *stats);
+
+void setVencedor(PlayerBasic *player);
 
 PlayerBasic* getVencedor(Stats *stats);
+
+int getNJogadores(Stats *stats);
 
 #endif

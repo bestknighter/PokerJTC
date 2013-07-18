@@ -1,5 +1,6 @@
 #ifndef _GUI_C
 #define _GUI_C
+#include "GUI.h"
 
 char* getNome(){
       char *aux, *nome;
@@ -23,7 +24,7 @@ float getDinheiro(){
 
 int getAI(){
       outGetAI();
-      return --inGetInt();
+      return inGetInt()-1;
 };
 
 float getRaise(){
@@ -43,12 +44,14 @@ float getSBlind(){
 
 void imprimeJogadores(PlayerBasic **lj){
       PlayerBasic *aux;
+      Dados *dados;
 
       aux = *lj;
       if(aux == NULL) outSemJogadores();
       else{
-            printf("%s", aux->nome);
-            switch (aux->AI){
+            dados = aux->outrosDados;
+            printf("%s", dados->nome);
+            switch (dados->AI){
                   case AI0:
                         printf(" (AI - 0)");
                         break;
@@ -58,11 +61,12 @@ void imprimeJogadores(PlayerBasic **lj){
                   default:
                         break;
             };
-            aux = aux->proximo;
+            aux = aux->prox;
             while(aux != (*lj)){
+                  dados = aux->outrosDados;
                   printf (", ");
-                  printf("%s", aux->nome);
-                  switch (aux->AI){
+                  printf("%s", dados->nome);
+                  switch (dados->AI){
                         case AI0:
                               printf(" (AI - 0)");
                               break;
@@ -72,7 +76,8 @@ void imprimeJogadores(PlayerBasic **lj){
                         default:
                               break;
                   };
-                  aux = aux->proximo;
+                  aux = aux->prox;
+                  dados = aux->outrosDados;
             };
             printf (".");
       };
@@ -184,8 +189,8 @@ void imprimeMesa(Stats *stats, int view){
                   dado = plaux->outrosDados;
                   imprimeJogador(plaux, (view == dado->nJogador)?(0):(1));
                   printf("\n\n");
-                  plaux = plaux->proximo;
-            }while(plaux->proximo != (*(stats->jogadores))->proximo);
+                  plaux = plaux->prox;
+            }while(plaux->prox != (*(stats->jogadores))->prox);
             printf("\n\nMesa: ");
             imprimeBaralho(stats->maoMesa, 0);
       };
@@ -252,6 +257,13 @@ void menuNovoJogador(Stats *stats){
       system("CLS");
       esc--;
       (esc)?(addJogador(stats, PERSONALIZADO)):(addJogador(stats, PADRAO));
+};
+
+int novaPartida(){
+    int esc;
+    printf("\nDeseja uma nova partida?\n1 - Sim\n0 - Nao\nSua escolha: ");
+    scanf("%d", &esc);
+    return (esc)?(11):(0);
 };
 
 void novaRodada(Stats *stats){

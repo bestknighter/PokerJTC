@@ -13,15 +13,18 @@
 	"jogador.h"
 	"baralho.h"
 
-1371156249 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\jogador.h
+1373991605 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\jogador.h
 	<stdlib.h>
 
-1371177629 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\jogador.c
+1374106064 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\jogador.c
 	"jogador.h"
 
-1353747460 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\main.c
+1373986585 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\main.c
 	<stdio.h>
 	<stdlib.h>
+	"FrameWork_JogoDeBaralho.h"
+	"GameLogic.h"
+	"GUI.h"
 
 1371178243 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\pokergamemanagement.c
 	"pokerGameManagement.h"
@@ -38,18 +41,48 @@
 1371155466 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\userinput.c
 	"userInput.h"
 
-1372174785 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\framework_jogodebaralho.c
+1374108755 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\framework_jogodebaralho.c
 	"FrameWork_JogoDeBaralho.h"
 
-1372707049 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\framework_jogodebaralho.h
+1374104829 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\framework_jogodebaralho.h
 	"jogador.h"
 	"baralho.h"
 
-1372707494 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamelogic.c
+1374109264 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamelogic.c
 	"GameLogic.h"
 
-1372707576 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamelogic.h
+1373988047 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamelogic.h
+	"FrameWork_JogoDeBaralho.h"
 	"GameManagement.h"
 
-1372707575 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamemanagement.h
+1374105883 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamemanagement.h
+	"FrameWork_JogoDeBaralho.h"
+
+1374109148 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gamemanagement.c
+	"GameManagement.h"
+
+1373988849 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gui.c
+	"GUI.h"
+
+1373988842 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\gui.h
+	"input.h"
+	"output.h"
+	"GameManagement.h"
+	"FrameWork_JogoDeBaralho.h"
+
+1372703135 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\input.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1372708997 c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\output.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1372703177 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\input.c
+	"input.h"
+
+1372709002 source:c:\users\gabriel filipe\documents\github\pokerjtc\pokerjtc mark ii\pokerjtc mark ii\output.c
+	"output.h"
 

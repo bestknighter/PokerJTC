@@ -91,7 +91,7 @@ void check(PlayerBasic *player){
 Stats* initGame(){
       Stats *stats;
 
-      stats = malloc(sizeof(Stats));
+      stats = calloc(sizeof(Stats), 1);
 
       stats->nJogadoresTotal = 0;
       stats->nJogadoresAtivo = 0;
@@ -108,15 +108,101 @@ Stats* initGame(){
       return stats;
 };
 
+void restartJogador(PlayerBasic *player){
+      Dados *dados;
+
+      dados = player->outrosDados;
+
+    if(player != NULL){
+        dados->estado = NOTPLAYED;
+        resetJogador(player);
+    };
+};
+
+void restartJogadores(PlayerBasic **lp){
+    PlayerBasic *player;
+
+    player = *lp;
+
+    if(player != NULL){
+        restartJogador(player);
+        player = player->prox;
+        while(player!=*lp){
+            restartJogador(player);
+            player = player->prox;
+        };
+    };
+};
+
+PlayerBasic* criarJogador(int mode){
+      PlayerBasic *novoJogador;
+      Dados *dados;
+
+      novoJogador = calloc(sizeof(PlayerBasic), 1);
+      dados = calloc(sizeof(Dados), 1);
+
+      novoJogador = createJogador(mode);
+      dados->nome = calloc(20, sizeof(char));
+      strcpy(dados->nome, getNome());
+      dados->nJogador = 0;
+      dados->dinheiro = (mode==PADRAO)?(500):(getDinheiro());
+      dados->aposta = 0;
+      dados->estado = NOTPLAYED;
+      dados->AI = getAI();
+      dados->badge = OTHER;
+      novoJogador->outrosDados = dados;
+      return novoJogador;
+};
+
+void insereJogadorLista(Stats *stats, PlayerBasic *jogador){
+    PlayerBasic *plaux;
+    Dados *dadosNovo, *dados;
+
+    dadosNovo = jogador->outrosDados;
+
+    plaux = *(stats->jogadores);
+    if (plaux == NULL) *(stats->jogadores) = jogador;
+    else {
+        plaux = plaux->ant;
+        jogador->prox = plaux->prox;
+        jogador->ant = plaux;
+        jogador->prox->ant = jogador;
+        plaux->prox = jogador;
+        dados = jogador->ant->outrosDados;
+        dadosNovo->nJogador = dados->nJogador+1;
+    };
+};
+
+void addJogador(Stats *stats, int mode){
+
+    insereJogadorLista(stats, criarJogador(mode));
+    stats->nJogadoresTotal += 1;
+    stats->nJogadoresAtivo += 1;
+};
+
+void resetEstado(Stats *stats){
+    PlayerBasic *plaux;
+    Dados *dados;
+
+    plaux = *(stats->jogadores);
+    dados = plaux->outrosDados;
+    do{
+        if(dados->estado!=FOLDED) dados->estado = NOTPLAYED;
+        plaux = plaux->prox;
+        dados = plaux->outrosDados;
+    }while(plaux->prox != (*(stats->jogadores))->prox);
+};
+
 void resetGame(Stats *stats){
       PlayerBasic *player;
       Dados *dados;
 
       player = getVencedor(stats);
-      dados = player->outrosDados;
-
-      dados->dinheiro += stats->valorDaMesa;
-      stats->nJogadoresAtivo = getNJogadores();
+      if(player != NULL){
+            dados = player->outrosDados;
+            dados->dinheiro += stats->valorDaMesa;
+      };
+      stats->nJogadoresAtivo = getNJogadores(stats);
       stats->smallBlind = 0;
       stats->bigBlind = 0;
       stats->apostaAtual = 0;
@@ -125,6 +211,22 @@ void resetGame(Stats *stats){
       destroiBaralho(stats->baralhoJogo);
       stats->baralhoJogo = criaBaralho();
 
+};
+
+int fimRodada(Stats *stats){
+    PlayerBasic *plaux;
+    Dados *dados;
+    int i = 1;
+
+    plaux = *(stats->jogadores);
+    dados = plaux->outrosDados;
+
+    do{
+        if(dados->estado == NOTPLAYED || dados->estado == CHECKED) i = 0;
+        plaux = plaux->prox;
+        dados = plaux->outrosDados;
+    }while(plaux != *(stats->jogadores));
+    return i;
 };
 
 void badgeSetter(Stats *stats){
@@ -144,7 +246,11 @@ void badgeSetter(Stats *stats){
             };
             plaux = plaux->prox;
       }while(plaux->prox != (*(stats->jogadores))->prox);
-      while(plaux->nJogador != np) plaux = plaux->prox;
+      dado = plaux->outrosDados;
+      while(dado->nJogador != np){
+                  plaux = plaux->prox;
+                  dado = plaux->outrosDados;
+      }
       dado = plaux->outrosDados;
       dado->badge = DEALER;
       if(plaux->prox->prox != plaux){
@@ -156,7 +262,7 @@ void badgeSetter(Stats *stats){
             dado = plaux->prox->outrosDados;
             dado->badge = BBLIND;
       };
-      restartGame(stats);
+      resetGame(stats);
 };
 
 void calculoPote(Stats *stats){
@@ -173,6 +279,28 @@ void calculoPote(Stats *stats){
       stats->valorDaMesa = pote;
 };
 
+void setBlind(Stats *stats){
+    PlayerBasic *plaux;
+    Dados *dados;
+    Carta *c;
+
+    plaux = *(stats->jogadores);
+    dados = plaux->outrosDados;
+
+    while(dados->badge!=BBLIND){
+            plaux = plaux->prox;
+            dados = plaux->outrosDados;
+    }
+    stats->bigBlind = getBBlind();
+    stats->apostaAtual = stats->bigBlind;
+    call(plaux, stats->bigBlind);
+    dados->estado = NOTPLAYED;
+    stats->smallBlind = getSBlind();
+    call(plaux->ant, stats->smallBlind);
+    dados = plaux->ant->outrosDados;
+    dados->estado = NOTPLAYED;
+};
+
 void setVencedor(PlayerBasic *player){                //Algoritmo passível de alteração
       Dados *dado;
 
@@ -186,6 +314,7 @@ PlayerBasic* getVencedor(Stats *stats){
       int end = 0;
 
       plaux = *(stats->jogadores);
+      if (plaux == NULL) return NULL;
       do{
             dado = plaux->outrosDados;
             if (dado->badge == WINNER) end = 1;
@@ -196,6 +325,22 @@ PlayerBasic* getVencedor(Stats *stats){
       }while(end == 0);
       if(end == 1) return plaux;
       else return NULL;
+};
+
+int getNJogadores(Stats *stats){
+      PlayerBasic *plaux, **lj;
+      int x = 0;
+
+      lj = stats->jogadores;
+      plaux = *lj;
+      if(plaux == NULL) return 0;
+      else{
+            do{
+                  x++;
+                  plaux = plaux->prox;
+            }while(plaux!=*lj);
+            return x;
+      }
 };
 
 #endif

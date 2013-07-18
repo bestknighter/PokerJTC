@@ -3,7 +3,7 @@
 #include "jogador.h"
 #include "baralho.h"
 
-PlayerBasic* createJogador(int mode);
+
 
 void resetJogador(PlayerBasic *player);
 

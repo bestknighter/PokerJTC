@@ -2,7 +2,7 @@
 #define _JOGADOR_C
 #include "jogador.h"
 
-PlayerBasic* criarJogador(){
+PlayerBasic* creatingJogador(){
       PlayerBasic *novoJogador;
 
       novoJogador = calloc(1, sizeof(PlayerBasic));

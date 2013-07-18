@@ -2,12 +2,12 @@
 #define _FRAMEWORK_C
 #include "FrameWork_JogoDeBaralho.h"
 
-PlayerBasic* createJogador(int mode){
+PlayerBasic* criarJogador(int mode){
     PlayerBasic *novoJogador;
 
-    novoJogador = calloc(sizeof(PlayerBasic), 1);
+    novoJogador = malloc(sizeof(PlayerBasic));
     novoJogador->mao = calloc (1, sizeof(Carta*));
-    novoJogador->prox = novoJogador;
+    novoJogador->proximo = novoJogador;
     novoJogador->ant = novoJogador;
     return novoJogador;
 };
